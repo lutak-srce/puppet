@@ -1,0 +1,40 @@
+# This file can be used to override the default puppet settings.
+# See the following links for more details on what settings are available:
+# - https://docs.puppetlabs.com/puppet/latest/reference/config_important_settings.html
+# - https://docs.puppetlabs.com/puppet/latest/reference/config_about_settings.html
+# - https://docs.puppetlabs.com/puppet/latest/reference/config_file_main.html
+# - https://docs.puppetlabs.com/puppet/latest/reference/configuration.html
+[master]
+    vardir  = /opt/puppetlabs/server/data/puppetserver
+    logdir  = /var/log/puppetlabs/puppetserver
+    rundir  = /var/run/puppetlabs/puppetserver
+    pidfile = /var/run/puppetlabs/puppetserver/puppetserver.pid
+    codedir = /etc/puppetlabs/code
+<% if @storeconfigs_backend -%>
+
+    storeconfigs         = true
+    storeconfigs_backend = <%= @storeconfigs_backend %>
+<% end -%>
+
+[main]
+<% if @dns_alt_names -%>
+    dns_alt_names = <%= @dns_alt_names %>
+<% end -%>
+
+[agent]
+<% if @server -%>
+    # The Puppet master server to request configurations from.
+    # Defaults to puppet; change it if that’s not your server’s name.
+    server = <%= @server %>
+
+<% end -%>
+<% if @certname and @certname != @fqdn -%>
+    # The node's certificate name, and the unique identifier it uses when
+    # requesting catalogs; defaults to the fully qualified domain name.
+    certname = <%= @certname %>
+
+<% end -%>
+    # The environment to request when contacting the Puppet master. It’s only 
+    # a request, though; the master’s ENC can override this if it chooses.
+<% current_env = scope.lookupvar('environment').length > 0 ? scope.lookupvar('environment') : 'production' -%>
+    environment = <%= current_env %>
