@@ -33,16 +33,6 @@ class puppet (
     noop   => $noops,
   }
 
-  user { 'puppet':
-    require => Package['puppet'],
-    noop    => $noops,
-  }
-
-  group { 'puppet':
-    require => Package['puppet'],
-    noop    => $noops,
-  }
-
   service { 'puppet':
     ensure  => $service_ensure,
     enable  => $service_enable,
