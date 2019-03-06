@@ -18,7 +18,7 @@ class puppet (
 
   # file defaults
   File {
-    ensure  => $file_ensure,
+    ensure  => present,
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
@@ -28,7 +28,7 @@ class puppet (
 
   # package and service
   package { 'puppet':
-    ensure => $package_ensure,
+    ensure => present,
     name   => $package,
     noop   => $noops,
   }
