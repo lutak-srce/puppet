@@ -46,4 +46,8 @@ class puppet (
     content => template('puppet/puppet.conf.erb'),
   }
 
+  file { '/etc/profile.d/puppet_env.sh':
+    source => 'puppet:///modules/puppet/puppet_env.sh',
+  }
+
 }
