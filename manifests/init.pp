@@ -14,6 +14,7 @@ class puppet (
   $certname             = undef,
   $server               = undef,
   $noops                = undef,
+  $runinterval          = undef,
 ) {
 
   # file defaults
