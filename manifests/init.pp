@@ -15,6 +15,7 @@ class puppet (
   $server               = undef,
   $noops                = undef,
   $runinterval          = undef,
+  $http_connect_timeout = undef,
 ) {
 
   # file defaults
