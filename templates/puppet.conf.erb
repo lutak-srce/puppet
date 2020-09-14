@@ -38,6 +38,10 @@
     runinterval = <%= @runinterval %>
 
 <% end -%>
+<% if @http_connect_timeout -%>
+    http_connect_timeout = <%= @http_connect_timeout %>
+
+<% end -%>
     # The environment to request when contacting the Puppet master. It’s only 
     # a request, though; the master’s ENC can override this if it chooses.
 <% current_env = scope.lookupvar('environment').length > 0 ? scope.lookupvar('environment') : 'production' -%>
