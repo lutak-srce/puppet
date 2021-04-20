@@ -15,6 +15,10 @@
     storeconfigs         = true
     storeconfigs_backend = <%= @storeconfigs_backend %>
 <% end -%>
+<% if @reports != 'store' -%>
+
+    reports = <%= @reports %>
+<% end -%>
 
 [main]
 <% if @dns_alt_names -%>
