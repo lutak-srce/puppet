@@ -10,6 +10,7 @@ class puppet (
   $service_ensure       = 'running',
   $service_enable       = true,
   $storeconfigs_backend = undef,
+  $reports              = 'store',
   $dns_alt_names        = undef,
   $certname             = undef,
   $server               = undef,
