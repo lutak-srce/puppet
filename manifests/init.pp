@@ -31,7 +31,7 @@ class puppet (
 
   # package and service
   package { 'puppet':
-    ensure => present,
+    ensure => $ensure,
     name   => $package,
     noop   => $noops,
   }
