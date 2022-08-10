@@ -3,20 +3,21 @@
 #
 # This module manages puppet and is standard for all hosts
 class puppet (
-  $ensure               = 'present',
-  $package              = 'puppet-agent',
-  $version              = undef,
-  $service              = 'puppet',
-  $service_ensure       = 'running',
-  $service_enable       = true,
-  $storeconfigs_backend = undef,
-  $reports              = 'store',
-  $dns_alt_names        = undef,
-  $certname             = undef,
-  $server               = undef,
-  $noops                = undef,
-  $runinterval          = undef,
-  $http_connect_timeout = undef,
+  $ensure                     = 'present',
+  $package                    = 'puppet-agent',
+  $version                    = undef,
+  $service                    = 'puppet',
+  $service_ensure             = 'running',
+  $service_enable             = true,
+  $storeconfigs_backend       = undef,
+  $reports                    = 'store',
+  $dns_alt_names              = undef,
+  $certname                   = undef,
+  $server                     = undef,
+  $noops                      = undef,
+  $runinterval                = undef,
+  $http_connect_timeout       = undef,
+  $number_of_facts_soft_limit = undef,
 ) {
 
   # file defaults
