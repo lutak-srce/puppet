@@ -17,6 +17,7 @@ class puppet (
   $noops                = undef,
   $runinterval          = undef,
   $http_connect_timeout = undef,
+  $number_of_facts_soft_limit = undef,
 ) {
 
   # file defaults

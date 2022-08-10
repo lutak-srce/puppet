@@ -24,6 +24,9 @@
 <% if @dns_alt_names -%>
     dns_alt_names = <%= @dns_alt_names %>
 <% end -%>
+<% if @number_of_facts_soft_limit -%>
+    number_of_facts_soft_limit = <%= @number_of_facts_soft_limit %>
+<% end -%>
 
 [agent]
 <% if @server -%>
