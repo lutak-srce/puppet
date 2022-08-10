@@ -24,9 +24,6 @@
 <% if @dns_alt_names -%>
     dns_alt_names = <%= @dns_alt_names %>
 <% end -%>
-<% if @number_of_facts_soft_limit -%>
-    number_of_facts_soft_limit = <%= @number_of_facts_soft_limit %>
-<% end -%>
 
 [agent]
 <% if @server -%>
@@ -47,6 +44,10 @@
 <% end -%>
 <% if @http_connect_timeout -%>
     http_connect_timeout = <%= @http_connect_timeout %>
+
+<% end -%>
+<% if @number_of_facts_soft_limit -%>
+    number_of_facts_soft_limit = <%= @number_of_facts_soft_limit %>\
 
 <% end -%>
     # The environment to request when contacting the Puppet master. It’s only 
